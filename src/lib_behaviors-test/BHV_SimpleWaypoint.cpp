@@ -34,7 +34,7 @@
 using namespace std;
 
 //-----------------------------------------------------------
-// Procedure: Constructor
+// Procedure: Constructor()
 
 BHV_SimpleWaypoint::BHV_SimpleWaypoint(IvPDomain gdomain) : 
   IvPBehavior(gdomain)
@@ -56,7 +56,8 @@ BHV_SimpleWaypoint::BHV_SimpleWaypoint(IvPDomain gdomain) :
 }
 
 //---------------------------------------------------------------
-// Procedure: setParam - handle behavior configuration parameters
+// Procedure: setParam()
+//   Purpose: Handle behavior configuration parameters
 
 bool BHV_SimpleWaypoint::setParam(string param, string val) 
 {
@@ -91,7 +92,7 @@ bool BHV_SimpleWaypoint::setParam(string param, string val)
 }
 
 //-----------------------------------------------------------
-// Procedure: onIdleState
+// Procedure: onIdleState()
 
 void BHV_SimpleWaypoint::onIdleState() 
 {
@@ -99,7 +100,7 @@ void BHV_SimpleWaypoint::onIdleState()
 }
 
 //-----------------------------------------------------------
-// Procedure: postViewPoint
+// Procedure: postViewPoint()
 
 void BHV_SimpleWaypoint::postViewPoint(bool viewable) 
 {
@@ -114,7 +115,7 @@ void BHV_SimpleWaypoint::postViewPoint(bool viewable)
 }
 
 //-----------------------------------------------------------
-// Procedure: onRunState
+// Procedure: onRunState()
 
 IvPFunction *BHV_SimpleWaypoint::onRunState() 
 {
