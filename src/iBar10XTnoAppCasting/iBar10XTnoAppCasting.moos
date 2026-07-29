@@ -1,9 +1,0 @@
-//------------------------------------------------
-// iBar10XTnoAppCasting config block
-
-ProcessConfig = iBar10XTnoAppCasting
-{
-   AppTick   = 4
-   CommsTick = 4
-}
-

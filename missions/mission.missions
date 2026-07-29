@@ -5,10 +5,15 @@ ProcessConfig = ANTLER
 {
     MSBetweenLaunches = 200
     Run = MOOSDB @NewConsole = false
-    Run = Bar10XT @NewConsole = false
+    Run = iBar10XT @NewConsole = false
 }
 
-ProcessConfig = Bar10XT
+ProcessConfig = iBar10XT
 {
-    // custom code here
+    AppTick       = 10
+    CommsTick     = 10
+
+    i2c_bus       = /dev/i2c-1
+    i2c_addr      = 0x40
+    fluid_density = 1029.0
 }
