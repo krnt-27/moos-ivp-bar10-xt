@@ -38,7 +38,7 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include)
 # Search for the moos-ivp folder
 find_path( MOOSIVP_SOURCE_TREE_BASE
            NAMES build-ivp.sh build-moos.sh configure-ivp.sh
-           PATHS "../../tree/moos-ivp" "../../../tree/moos-ivp" "../../moos-ivp" "../../moos-ivp/trunk/" "../moos-ivp/trunk/" "/opt/moos-ivp"
+           PATHS "../../tree/moos-ivp" "../../../tree/moos-ivp" "../../moos-ivp" "../../../moos-ivp" "../../../../moos-ivp" "../../../../../moos-ivp" "../../moos-ivp/trunk/" "../moos-ivp/trunk/" "/opt/moos-ivp"
            DOC "Base directory of the MOOS-IvP source tree"
            NO_DEFAULT_PATH
 )
