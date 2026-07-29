@@ -9,7 +9,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.11)
 PROJECT( IVP_EXTEND )
 
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 14)
 
 #=======================================================================
 # Set the output directories for the binary and library files
@@ -30,7 +30,7 @@ SET( RUNTIME_OUTPUT_DIRECTORY "${IVP_EXTEND_BIN_DIR}"  CACHE PATH "" )
 #=======================================================================
 find_package(MOOS 10.0)
 INCLUDE_DIRECTORIES(${MOOS_INCLUDE_DIRS})
-
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include)
 #=======================================================================
 # Find the "moos-ivp" base directory
 #=======================================================================
@@ -38,7 +38,7 @@ INCLUDE_DIRECTORIES(${MOOS_INCLUDE_DIRS})
 # Search for the moos-ivp folder
 find_path( MOOSIVP_SOURCE_TREE_BASE
            NAMES build-ivp.sh build-moos.sh configure-ivp.sh
-           PATHS "../moos-ivp" "../../moos-ivp" "../../moos-ivp/trunk/" "../moos-ivp/trunk/"
+           PATHS "../../tree/moos-ivp" "../../../tree/moos-ivp" "../../moos-ivp" "../../moos-ivp/trunk/" "../moos-ivp/trunk/" "/opt/moos-ivp"
            DOC "Base directory of the MOOS-IvP source tree"
            NO_DEFAULT_PATH
 )
