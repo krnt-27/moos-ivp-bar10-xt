@@ -1,0 +1,19 @@
+ServerHost = localhost
+ServerPort = 9000
+
+ProcessConfig = ANTLER
+{
+    MSBetweenLaunches = 200
+    Run = MOOSDB @NewConsole = false   
+    Run = iSerialWitMotion @NewConsole = false
+}
+
+ProcessConfig = iSerialWitMotion
+{
+    AppTick       = 10
+    CommsTick     = 10
+
+    PORT          = /dev/ttyUSB0
+    BAUDRATE      = 9600
+    HEADING_CORRECTION = 20.0
+}

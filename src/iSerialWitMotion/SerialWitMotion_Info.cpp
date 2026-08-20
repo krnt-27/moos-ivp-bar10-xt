@@ -1,13 +1,13 @@
 /****************************************************************/
-/*   NAME: Labs247                                             */
+/*   NAME: labs247                                             */
 /*   ORGN: MIT, Cambridge MA                                    */
-/*   FILE: Bar10XT_Info.cpp                               */
+/*   FILE: SerialWitMotion_Info.cpp                               */
 /*   DATE: December 29th, 1963                                  */
 /****************************************************************/
 
 #include <cstdlib>
 #include <iostream>
-#include "Bar10XT_Info.h"
+#include "SerialWitMotion_Info.h"
 #include "ColorParse.h"
 #include "ReleaseInfo.h"
 
@@ -20,12 +20,10 @@ void showSynopsis()
 {
   blk("SYNOPSIS:                                                       ");
   blk("------------------------------------                            ");
-  blk("  The iBar10XT application interfaces with the Blue Robotics    ");
-  blk("  Bar10XT pressure/temperature sensor (Keller 4LD series)       ");
-  blk("  via I2C. It publishes pressure (mbar), temperature (C),       ");
-  blk("  and depth (m) to the MOOSDB.                                  ");
+  blk("  The iSerialWitMotion application is used for               ");
   blk("                                                                ");
-  blk("  Default I2C address: 0x40, bus: /dev/i2c-1                    ");
+  blk("                                                                ");
+  blk("                                                                ");
   blk("                                                                ");
 }
 
@@ -36,15 +34,15 @@ void showHelpAndExit()
 {
   blk("                                                                ");
   blu("=============================================================== ");
-  blu("Usage: iBar10XT file.moos [OPTIONS]                   ");
+  blu("Usage: iSerialWitMotion file.moos [OPTIONS]                   ");
   blu("=============================================================== ");
   blk("                                                                ");
   showSynopsis();
   blk("                                                                ");
   blk("Options:                                                        ");
   mag("  --alias","=<ProcessName>                                      ");
-  blk("      Launch iBar10XT with the given process name         ");
-  blk("      rather than iBar10XT.                           ");
+  blk("      Launch iSerialWitMotion with the given process name         ");
+  blk("      rather than iSerialWitMotion.                           ");
   mag("  --example, -e                                                 ");
   blk("      Display example MOOS configuration block.                 ");
   mag("  --help, -h                                                    ");
@@ -52,7 +50,7 @@ void showHelpAndExit()
   mag("  --interface, -i                                               ");
   blk("      Display MOOS publications and subscriptions.              ");
   mag("  --version,-v                                                  ");
-  blk("      Display the release version of iBar10XT.        ");
+  blk("      Display the release version of iSerialWitMotion.        ");
   blk("                                                                ");
   blk("Note: If argv[2] does not otherwise match a known option,       ");
   blk("      then it will be interpreted as a run alias. This is       ");
@@ -68,21 +66,14 @@ void showExampleConfigAndExit()
 {
   blk("                                                                ");
   blu("=============================================================== ");
-  blu("iBar10XT Example MOOS Configuration                   ");
+  blu("iSerialWitMotion Example MOOS Configuration                   ");
   blu("=============================================================== ");
   blk("                                                                ");
-  blk("ProcessConfig = iBar10XT                              ");
+  blk("ProcessConfig = iSerialWitMotion                              ");
   blk("{                                                               ");
   blk("  AppTick   = 4                                                 ");
   blk("  CommsTick = 4                                                 ");
   blk("                                                                ");
-  blk("  // I2C Configuration                                          ");
-  blk("  I2C_BUS   = /dev/i2c-1                                       ");
-  blk("  I2C_ADDR  = 0x40                                              ");
-  blk("                                                                ");
-  blk("  // Fluid density in kg/m^3                                    ");
-  blk("  // 1029 = seawater (default), 997 = freshwater                ");
-  blk("  FLUID_DENSITY = 1029                                          ");
   blk("}                                                               ");
   blk("                                                                ");
   exit(0);
@@ -96,21 +87,19 @@ void showInterfaceAndExit()
 {
   blk("                                                                ");
   blu("=============================================================== ");
-  blu("iBar10XT INTERFACE                                    ");
+  blu("iSerialWitMotion INTERFACE                                    ");
   blu("=============================================================== ");
   blk("                                                                ");
   showSynopsis();
   blk("                                                                ");
   blk("SUBSCRIPTIONS:                                                  ");
   blk("------------------------------------                            ");
-  blk("  None                                                          ");
+  blk("  NODE_MESSAGE = src_node=alpha,dest_node=bravo,var_name=FOO,   ");
+  blk("                 string_val=BAR                                 ");
   blk("                                                                ");
   blk("PUBLICATIONS:                                                   ");
   blk("------------------------------------                            ");
-  blk("  BAR10XT_PRESSURE    = double (mbar)                           ");
-  blk("  BAR10XT_TEMPERATURE = double (deg C)                          ");
-  blk("  BAR10XT_DEPTH       = double (meters)                         ");
-  blk("  BAR10XT_STATUS      = string (OK / ERROR)                     ");
+  blk("  Publications are determined by the node message content.      ");
   blk("                                                                ");
   exit(0);
 }
@@ -120,6 +109,7 @@ void showInterfaceAndExit()
 
 void showReleaseInfoAndExit()
 {
-  showReleaseInfo("iBar10XT", "gpl");
+  showReleaseInfo("iSerialWitMotion", "gpl");
   exit(0);
 }
+

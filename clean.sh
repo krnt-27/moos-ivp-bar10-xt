@@ -1,7 +1,6 @@
 #!/bin/bash
 
 rm -rf build/*
-find lib -mindepth 1 -maxdepth 1 ! -name 'KellerLD' -exec rm -rf {} +
 rm -rf bin/p*
 rm -f .DS_Store
 rm -f  missions/*/.LastOpenedMOOSLogDirectory

@@ -15,7 +15,7 @@ INCLUDE_DIRECTORIES(${LOCAL_LIBRARY_DIRS})
 #============================================================================
 # List the subdirectories to build...
 #============================================================================
-ADD_SUBDIRECTORY(iBar10XT)
+ADD_SUBDIRECTORY(iSerialWitMotion)
 
 ##############################################################################
 #                           END of CMakeLists.txt

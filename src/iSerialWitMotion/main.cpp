@@ -1,5 +1,5 @@
 /************************************************************/
-/*    NAME: Labs247                                              */
+/*    NAME: labs247                                              */
 /*    ORGN: MIT, Cambridge MA                               */
 /*    FILE: main.cpp, Cambridge MA                          */
 /*    DATE: December 29th, 1963                             */
@@ -8,8 +8,8 @@
 #include <string>
 #include "MBUtils.h"
 #include "ColorParse.h"
-#include "Bar10XT.h"
-#include "Bar10XT_Info.h"
+#include "SerialWitMotion.h"
+#include "SerialWitMotion_Info.h"
 
 using namespace std;
 
@@ -40,12 +40,12 @@ int main(int argc, char *argv[])
     showHelpAndExit();
 
   cout << termColor("green");
-  cout << "iBar10XT launching as " << run_command << endl;
+  cout << "iSerialWitMotion launching as " << run_command << endl;
   cout << termColor() << endl;
 
-  Bar10XT Bar10XT;
+  SerialWitMotion SerialWitMotion;
 
-  Bar10XT.Run(run_command.c_str(), mission_file.c_str());
+  SerialWitMotion.Run(run_command.c_str(), mission_file.c_str());
   
   return(0);
 }

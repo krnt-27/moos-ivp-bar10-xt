@@ -1,12 +1,12 @@
 /****************************************************************/
-/*   NAME: Labs247                                             */
+/*   NAME: labs247                                             */
 /*   ORGN: MIT, Cambridge MA                                    */
-/*   FILE: Bar10XT_Info.h                                      */
+/*   FILE: SerialWitMotion_Info.h                                      */
 /*   DATE: Dececmber 29th, 1963                                 */
 /****************************************************************/
 
-#ifndef Bar10XT_INFO_HEADER
-#define Bar10XT_INFO_HEADER
+#ifndef SerialWitMotion_INFO_HEADER
+#define SerialWitMotion_INFO_HEADER
 
 void showSynopsis();
 void showHelpAndExit();
